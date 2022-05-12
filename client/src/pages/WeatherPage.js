@@ -28,7 +28,7 @@ function WeatherPage(){
         try{
             const data = await request('/weather', 'POST', {city: city}, {Auth: `${auth.token}`})
             console.log(data)
-            navigate(`/city/${data.city._id}`)
+            navigate(`/city/${data._id}`)
             setCity('')
         }catch(err){
             console.log(err)
@@ -49,7 +49,7 @@ function WeatherPage(){
     }
 
     return(
-        <div>
+        <div style={{margin: '70px 120px 0 120px'}}>
             <h2>Weather</h2>
             <input 
                 placeholder='Enter city'
@@ -65,7 +65,7 @@ function WeatherPage(){
                     <h3>Temperature: {Math.round(weather.main.temp)}°C</h3>
                     <h3>Weather: {weather.weather[0].main}</h3>
                     <h4>Date: {new Date().toLocaleString()}</h4>
-                    <button onClick={addClick}>Add</button>
+                    <button className="waves-effect waves-light btn pink accent-3" style={{margin: '20px 0 0 0', width: '100px'}} onClick={addClick}>Add</button>
                 </div>
                 ) : ('')}
             

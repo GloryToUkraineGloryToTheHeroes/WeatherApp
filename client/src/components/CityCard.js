@@ -49,14 +49,14 @@ export const CityCard = (city) => {
     
 
     return(
-        <div>
+        <div style={{margin: '70px 120px 0px'}}>
             {(typeof weather.main != 'undefined') ? (
                 <div>
                     <h2>{weather.name}, {weather.sys.country}</h2>
                     <h3>Temperature: {weather.main.temp}°C</h3>
                     <h3>Weather: {weather.weather[0].main}</h3>
                     <h4>Date: {new Date().toLocaleString()}</h4>
-                    <button onClick={deleteCity}>Delete</button>
+                    <button className="waves-effect waves-light btn pink accent-3" style={{margin: '20px 0 0 0', width: '100px'}} onClick={deleteCity}>Delete</button>
                 </div>
                 ) : ('')}
         </div>

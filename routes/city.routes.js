@@ -23,8 +23,7 @@ router.post('/weather', authMiddleware, async(req, res) => {
 
         await citySave.save()
 
-        res.status(201).json({message: citySave})
-        
+        return res.status(201).json(citySave)
 
     }catch(err){
         console.log(err)
@@ -39,6 +38,21 @@ router.post('/city/delete', authMiddleware, async (req, res) => {
         const {id} = await req.body 
 
         const data = await City.deleteOne({_id: id})
+        res.json({message: `delete: ${data}`})
+
+    }catch(err){
+        console.log(err)
+        res.status(500).json({message: 'Something went wrong (city.routs)'})
+    }
+})
+
+
+router.post('/city/reset', authMiddleware, async (req, res) => {
+    try{
+
+
+
+        const data = await City.deleteMany({ owner: req.user.userId })
         res.json({message: `delete: ${data}`})
 
     }catch(err){

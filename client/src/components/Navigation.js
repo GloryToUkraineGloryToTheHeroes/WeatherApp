@@ -13,7 +13,7 @@ export const Navigation = () => {
     }
 
     return(
-        <div>
+        <div >
             <ul id="dropdown1" className="dropdown-content">
                 <li><a href="#!">one</a></li>
                 <li><a href="#!">two</a></li>
@@ -21,12 +21,12 @@ export const Navigation = () => {
                 <li><a href="#!">three</a></li>
             </ul>
             <nav>
-                <div className="nav-wrapper">
-                    <a href="#!" className="brand-logo">Logo</a>
+                <div className="nav-wrapper pink accent-3">
+                    <a href="#!" className="brand-logo" style={{marginLeft: '40px'}}>WeatherApp</a>
                     <ul className="right hide-on-med-and-down">
                         <li><NavLink to='/main'>Main</NavLink></li>
                         <li><NavLink to='/weather'>Weather</NavLink></li>
-                        <li><a href='/' onClick={logoutHandler}>Log out</a></li>
+                        <li><a href='/' onClick={logoutHandler} style={{color: '#000', fontWeight: 'bold'}}>Log out</a></li>
                     </ul>
                 </div>
             </nav>

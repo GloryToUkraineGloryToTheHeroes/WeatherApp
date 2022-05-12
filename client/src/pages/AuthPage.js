@@ -41,23 +41,24 @@ function AuthPage(){
     }
 
     return(
-        <div>
-                <h2 id='reg'>Registration</h2>
-            <div>
+        <div style={{margin: '90px 160px 0 160px'}}>
+                <h2 id='reg' style={{margin: '150px 0 0 0'}}>Registration</h2>
+            <div style={{margin: '40px 0 0 0'}}>
 
                 <label>
-                    <label htmlFor='name'>Name</label><br /><br />
+                    <label htmlFor='name'>Name</label>
                     <input 
                     placeholder='Enter name'
                     name='name'
                     id='name'
                     type='text'
                     onChange={changeHandler}
+                    style={{margin: '0 0 25px 0'}}
                     />
                 </label>
 
                 <label>
-                    <br /><label htmlFor='password'>Password</label><br /><br />
+                    <br /><label htmlFor='password'>Password</label>
                     <input 
                     placeholder='Enter password'
                     name='password'
@@ -71,8 +72,8 @@ function AuthPage(){
 
             <div>
                 <br /> 
-                <button onClick={loginHandler} disabled={loading}>Log in</button>
-                <button onClick={registerHandler} disabled={loading}>Sign up</button>
+                <button className="waves-effect waves-light btn pink accent-3" style={{margin: '0 20px 0 0', width: '100px'}} onClick={loginHandler} disabled={loading}>Log in</button>
+                <button className="waves-effect waves-light btn pink accent-3" style={{margin: '0', width: '100px'}} onClick={registerHandler} disabled={loading}>Sign up</button>
             </div>
         </div>
     )

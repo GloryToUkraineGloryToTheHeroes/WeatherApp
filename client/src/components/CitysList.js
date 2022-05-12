@@ -12,7 +12,6 @@ const api = {
 export const CitysList = ({citys}) => {
 
 
-
   const tempArr = []
 
   // eslint-disable-next-line
@@ -23,7 +22,7 @@ export const CitysList = ({citys}) => {
   const [found, setFound] = React.useState(false)
 
   if(!citys.length){
-    return <p>Not found</p>
+    return <p style={{textAlign: 'center', marginTop: '40px'}}>Not found</p>
   }
 
 
@@ -56,33 +55,35 @@ export const CitysList = ({citys}) => {
   }
 
   return(
-    <table>
-      <thead>
-        <tr>
-        <th>№</th> 
-        <th>City</th> 
-        <th>Temperature</th>
-        <th>Watch full</th>
-        </tr>
-      </thead>
-
-      <tbody>
-      { citys.map( (city, index) => {
-
-        return(
-          <tr key={city._id}>
-            <td>{index + 1}</td>
-            <td>{city.city}</td>
-            <td>{Math.round(tempArr[index])}°C</td>
-            <td>
-              <Link to={`/city/${city._id}`}>Open</Link>
-            </td>
+    <div style={{width: '100%'}} >
+      <table style={{margin: '10px auto 0', width: '96%'}}>
+        <thead>
+          <tr>
+          <th>№</th> 
+          <th>City</th> 
+          <th>Temperature</th>
+          <th>Watch full</th>
           </tr>
-        )
-      } ) }
+        </thead>
 
-      </tbody>
-    </table>
+        <tbody>
+        { citys.map( (city, index) => {
+
+          return(
+            <tr key={city._id}>
+              <td>{index + 1}</td>
+              <td>{city.city}</td>
+              <td>{Math.round(tempArr[index])}°C</td>
+              <td>
+                <Link to={`/city/${city._id}`}>Open</Link>
+              </td>
+            </tr>
+          )
+        } ) }
+
+        </tbody>
+      </table>
+    </div>
   )
 }
 
