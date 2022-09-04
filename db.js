@@ -6,11 +6,6 @@ const City = require('./schemes/City')
 const url = 'mongodb://127.0.0.1:27017/cats'
 
 
-/*
-СУКА ЕБАНЫЙ ГИТ
-*/
-
-
 
 async function run(){
     try{
